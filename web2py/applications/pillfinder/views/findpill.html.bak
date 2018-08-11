@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+
+{{=BEAUTIFY(response._vars)}}
+
+<p>
+    hi
+</p>

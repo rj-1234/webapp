@@ -169,7 +169,7 @@
 
 <!-- To show the upload image as canvas -->
 
-            <input type="file" accept="image/*" capture id="file-input" onclick="show().setTimeout(saveImage, 100);">
+            <input type="file" accept="image/*" id="file-input" ">
             <div id="next">
             <button type="button" id="capture1" style="color: white; background: transparent; border: 3px solid #2d9add; align-self: center;display: block; margin: 0 auto; visibility: hidden"><a href="#" onclick="window.open('http://localhost:3082/');window.open('next.html');">NEXT</a></button>
 
@@ -211,6 +211,23 @@
 <!--    <script src="js/jquery-2.1.3.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script> -->
+   <script type="text/javascript">
+     document.addEventListener('DOMContentLoaded',function() {
+
+       document.getElementById('file-input').onchange=changeEventHandler;
+        },false);
+
+        function changeEventHandler(event) {
+            // You can use “this” to refer to the selected element.
+            var file = document.getElementById("file-input").files[0];
+            var blob_url = window.webkitURL.createObjectURL(file);
+            console.log(blob_url, file);
+            console.log(this);
+            if(!event.target.value) alert('Please Select One');
+            else alert('You like ' + event.target.value + ' ice cream.'); 
+        }
+
+   </script>
     
     </body>
 
